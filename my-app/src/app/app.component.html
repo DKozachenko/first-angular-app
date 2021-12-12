@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Hello {{ title }}</h1>
+
+
+  <input #newTaskInput type="text">
+  <button (click)="add(newTaskInput)">Add</button>
+  <ul>
+    <li 
+    *ngFor="let item of tasks; let i = index"
+    [class.complete]="item.complete"
+    (click)="toggle(item)">
+      {{ item.title }}
+      <button (click)="remove(i)">Remove</button>
+    </li>
+  </ul>
+
+</div>
