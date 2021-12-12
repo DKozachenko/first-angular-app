@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface ITask {
+export interface ITask {
   title: string;
   complete: boolean;
 }
@@ -19,18 +19,10 @@ export class AppComponent {
     { title: 'eggs', complete: false },
   ]
 
-  add(el : any) {
+  add(el: any) {
     this.tasks.push({
       title: el.value,
       complete: false
     })
-  }
-
-  toggle(task : ITask) {
-    task.complete = !task.complete
-  }
-
-  remove(ind: number) {
-    this.tasks.splice(ind, 1)
   }
 }
